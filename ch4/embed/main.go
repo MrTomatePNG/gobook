@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Point struct {
 	X, Y int
 }
@@ -23,4 +25,8 @@ func main() {
 		},
 		Spokes: 20,
 	}
+
+	fmt.Printf("%#v\n", w)
+	w.X = 42
+	fmt.Printf("%#v\n", w)
 }
