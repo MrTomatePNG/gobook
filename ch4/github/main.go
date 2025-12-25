@@ -17,13 +17,13 @@ type IssuesSearchResult struct {
 }
 
 type Issue struct {
-	Number    int
-	HTMLURL   string `json:"html_url"`
-	Title     string
-	State     string
-	User      *User
-	CreatedAt time.Time `json:"created_at"`
-	Body      string
+	Number int `json:"number,omitempty"`
+	User
+	HTMLURL   string    `json:"html_url,omitempty"`
+	Title     string    `json:"title"`
+	State     string    `json:"state,omitempty"` // "open" ou "closed"
+	Body      string    `json:"body"`            // Aqui entra o texto do editor
+	CreatedAt time.Time `json:"created_at,omitempty"`
 }
 
 type User struct {
@@ -71,7 +71,7 @@ func DateFormat(date time.Time) string {
 	case seconds < (60 * 60 * 60):
 		hours := seconds / (60 * 60)
 
-		return fmt.Sprintf("%g hours", hours)
+		return fmt.Sprintf("%d hours", hours)
 	case seconds < (60 * 60 * 60 * 30):
 		days := seconds / (60 * 60 * 60)
 		return fmt.Sprintf("%d days", days)
