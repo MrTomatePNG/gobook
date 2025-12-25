@@ -16,6 +16,6 @@ func main() {
 
 	fmt.Printf("%d issues:\n", result.TotalCount)
 	for _, item := range result.Items {
-		fmt.Printf("#%-5d %9.9s %.55s %.11s \n", item.Number, item.User.Login, item.Title, github.DateFormat(item.CreatedAt))
+		fmt.Printf("#%-5d %9.9s %.55s %.11s \n", item.Number, item.Login, item.Title, github.DateFormat(item.CreatedAt))
 	}
 }
