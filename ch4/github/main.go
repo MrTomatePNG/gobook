@@ -18,7 +18,7 @@ type IssuesSearchResult struct {
 
 type Issue struct {
 	Number int `json:"number,omitempty"`
-	User
+	User User
 	HTMLURL   string    `json:"html_url,omitempty"`
 	Title     string    `json:"title"`
 	State     string    `json:"state,omitempty"` // "open" ou "closed"
