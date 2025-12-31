@@ -12,7 +12,7 @@ func main() {
 
 	for _, url := range os.Args[1:] {
 
-		if !strings.HasPrefix("http://", url) {
+		if !strings.HasPrefix("https://", url) {
 			url = "http://" + url
 		}
 
