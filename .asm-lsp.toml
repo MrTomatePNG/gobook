@@ -1,0 +1,28 @@
+[default_config]
+assembler = "go"
+instruction_set = "x86/x86-64"
+
+[opts]
+compiler = "go"
+diagnostics = true
+default_diagnostics = true
+
+# Configuração específica para projeto AMD64
+[[project]]
+path = "others"
+assembler = "go"
+instruction_set = "x86-64"
+
+[project.opts]
+compiler = "go"
+compile_flags_txt = [
+    "go",
+    "build",
+    "-gcflags",
+    "-S"
+]
+[formatter]
+enable = true
+style = "default"
+indent_size = 4
+auto_format_on_save = true
