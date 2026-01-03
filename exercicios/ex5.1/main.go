@@ -33,11 +33,6 @@ func visit(links []string, n *html.Node) []string {
 			}
 		}
 	}
-	// reescreve esse trecho usando recursão
-	// for c := n.FirstChild; c != nil; c = c.NextSibling {
-	// 	links = visit(links, c)
-	// }
-	// ele atribui o valor de first
 
 	links = visit(links, n.FirstChild)
 	links = visit(links, n.NextSibling)
