@@ -1,4 +1,4 @@
-package main
+package findlinks2
 
 import (
 	"fmt"
