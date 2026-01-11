@@ -1,4 +1,4 @@
-package main
+package geometry
 
 import (
 	"fmt"
@@ -37,6 +37,11 @@ func (path Path) Distance() (sum float64) {
 	return
 }
 
+func (p *Point) ScaleBy(factor float64) {
+	p.X *= factor
+	p.Y *= factor
+}
+
 func main() {
 	perim := Path{
 		{1, 1},
@@ -44,5 +49,5 @@ func main() {
 		{5, 4},
 		{1, 1},
 	}
-	fmt.Println(perim.Distance() / 2)
+	fmt.Println(perim.Distance())
 }
