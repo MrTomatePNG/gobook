@@ -5,6 +5,12 @@ import (
 	"strings"
 )
 
+// isso aqui é legal
+type FuncStruct struct {
+	Number int
+	Op     func(number int) int
+}
+
 func main() {
 	f := square
 	fmt.Println(f(2))
@@ -16,6 +22,18 @@ func main() {
 	}))
 
 	fmt.Println(strings.Map(add1, "HAL-9000"))
+	adica := func(n int) int {
+		return 1 + n
+	}
+
+	fs := FuncStruct{
+		Number: 1,
+		Op:     adica,
+	}
+	result := fs.Op(1)
+
+	fmt.Println(result)
+
 }
 func square(n int) int {
 	return n * n
